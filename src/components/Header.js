@@ -1,4 +1,5 @@
 // IMPORTS //
+import React from 'react';
 import { useState } from 'react';
 import {
     Navbar,
@@ -36,7 +37,7 @@ const Header = () => {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-link' to='/portfolio'>
+                                <NavLink className='nav-link' to='/portfolio/0'>
                                     Portfolio
                                 </NavLink>
                             </NavItem>

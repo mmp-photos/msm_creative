@@ -5,7 +5,7 @@ const initialState = {
     portfolioArray: PORTFOLIO
 };
 
-const portfolioSlice = createSlice({
+const portfolioSlice = createSlice({    
     name: 'portfolio',
     initialState
 });
@@ -17,6 +17,6 @@ export const selectAllPortfolioItems = () => {
 };
 
 export const selectPortfolioByID = (id) => (state) => {
-    return state.portfolio.portfolioArray.find(
-        (itemID) => state.portfolio.id === parseInt(id));
+    let portfolio = PORTFOLIO;
+    return  portfolio.find(o => o.id === parseInt(id));
 };

@@ -48,9 +48,18 @@ body {
   }
   
   /* STRUCTURAL STYLES END */
+
   /* ID TAGS */
+  /*         */
+  /* These are the styles for named ID tags for the MSM Portfolio site.  */
+  /* They are listed by page and then alphabetically                     */
+  /*/////////////////////////////////////////////////////////////////////*/
+
+  /* HOME PAGE ID TAGS */
+  /*/////////////////////////////////////////////////////////////////////*/
+
   #home-media {
-    background-image: url(../images/backgrounds/bg04.jpg);
+    /* background-image: url(../images/backgrounds/bg04.jpg); */
     overflow: hidden;
   }
   
@@ -61,6 +70,9 @@ body {
     font-family: Palatino, serif;
   }
   
+  /* RESUME PAGE ID TAGS */
+  /*/////////////////////////////////////////////////////////////////////*/
+
   #skill-list-text {
     position: relative;
     width: 60vw;
@@ -112,6 +124,18 @@ body {
     line-height: 1.25em;
   }
   
+  /* PORTFOLIO STYLES */
+  .portfolio-thumbs {
+    display: inline-block;
+    background-color: antiquewhite;
+    max-width: 100px;
+  }
+  
+  .portfolio-thumbs-image {
+    max-width: 100%;
+    padding: 6px;
+  }
+
   /* SEMANTIC STYLES ORGANIZED IN GROUPS */
   /* HEADER STYLES */
   h1 {
@@ -136,6 +160,12 @@ body {
     font-family: 'Palatino','Times New Roman', Times, serif;
   }
   
+  .h2-modal {
+    color: #f9fde8;
+    font-size: 18pt;
+    font-family: 'Helvetica','Arial', sans-serif;
+  }
+
   h3 {
     color: #f2ffb3;
     font-size: 18pt;
@@ -207,7 +237,17 @@ body {
     float: right;
   }
   
-  /* COLORS */
+  /* UTILITY STYLES FOR TEXT MANIPULATION */
+  .text-italics {
+    font-style: italic;
+  }
+
+  /* COLOR STYLES */
+  /*             */
+  /* Below are the color styles for the MSM Portfolio Site               */
+  /* Use as utility classes to add color to text, and backgrounds        */
+  /* ////////////////////////////////////////////////////////////////////*/
+
   .bg-secondary-color {
     background-color: #43598a;
   }
@@ -241,7 +281,13 @@ body {
   }
   
   /* UTILITY STYLES END */
-  /* IMAGE STYLES START */
+
+
+/* IMAGE STYLES */
+/*             */
+/* Below are the image styles for the MSM Portfolio Site               */
+/* ////////////////////////////////////////////////////////////////////*/
+
   .logo-nav {
     max-width: 120px;
     margin-top: 12px;
@@ -256,8 +302,30 @@ body {
     max-height: 40vh;
   }
   
-  /* IMAGE STYLES END */
-  /* BORROWED STYLES */
+  .portfolioList {
+    padding: 6;
+  }
+
+  .tldr-image {
+    cursor: pointer;
+  }
+
+/* //////////////////  END IMAGE STYLES  ///////////////////////////*/
+
+/* BORROWED STYLES */
+
+  .avatar {
+    width: 75%;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #43598a;
+    filter: drop-shadow(3px 4px 6px black);
+    margin-top: 42px;
+    margin-bottom: 32px;
+    margin-left: -12/*  */5px;
+  }
+
   .left_quote:before {
     background: black;
     content: " ";
@@ -282,16 +350,41 @@ body {
     position: absolute;
   }
     
-  /* ID STYLES */
-
 .tldr {
   background-color: white;
   opacity: .73;
-  width: 85%;
   padding-top: 0px;
+  padding-bottom: 12px;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 250px;
+  margin-bottom: 50px;
   border: 2px solid black;
+}
+
+/* MODAL STYLES */
+
+.about-modal {
+  max-height: 95vh;
+  max-width: 500px;
+}
+
+.about-modal-header {
+  background-color: #43598a;
+  font-size: 12px;
+}
+
+.modal-image {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+}
+
+/* CARD STYLES */
+.portfolio-header {
+  background-color: #43598a;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 12px;
 }

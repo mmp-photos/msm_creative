@@ -1,28 +1,53 @@
-import { selectAllPortfolioItems, selectPortfolioByID } from './portfolioSlice';
+import React from 'react';
+import { selectAllPortfolioItems } from './portfolioSlice';
 import { useSelector } from 'react-redux';
-import { Row, Col, } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-const item = { id: 1};
-const DisplayCard = (item) => {
-    const portfolioItem = useSelector(selectPortfolioByID(item.id));
-    const { title, image, description } = portfolioItem;
-    console.log('Item number: ', item.id);
-    return (
-         'Display card'
-    )
-}
+const DisplayCard = () => {
 
-const PortfolioList = () => {
     const portfolioArray = useSelector(selectAllPortfolioItems);
-    const returnArray = [];
 
-    portfolioArray.forEach((item) => {
-            returnArray.push('<h1>'+item.title+'<h1>')
-            console.log(returnArray);
+    const portfolioItems = portfolioArray.map((item) => {
+        return (
+            <Link to={'/portfolio/' + item.id}>
+                <Col lg="4" key={ item.id } style={{display: "inline-block"}}>
+                    <img className="portfolio-thumbs-image"
+                        src={item.image}
+                        alt={item.title}
+                    />
+                </Col>
+            </Link>
+        )
     });
 
     return (
-        returnArray
+        <Col lg="3">
+            <div style={{backgroundColor: "white"}}>
+                <Nav tabs>
+                    <NavItem>
+                        <NavLink className="active">
+                            marketing
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink>
+                            writing
+                        </NavLink>
+                    </NavItem>
+                </Nav>
+                <TabContent style={{backgroundColor: "white"}}>
+                    <TabPane className="active">
+                        <Row>
+                            <Col>
+                                {portfolioItems}
+                            </Col>
+                        </Row>
+                    </TabPane>
+                </TabContent>
+            </div>
+        </Col>
     )
 }
-export default PortfolioList;
+
+export default DisplayCard;

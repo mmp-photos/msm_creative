@@ -1,27 +1,51 @@
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { Card, CardHeader, Container, Row, Col } from 'reactstrap';
 import { selectPortfolioByID } from './portfolioSlice';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-const item = { id: 1};
+const PortfolioDisplay = () => {
+    const { portId } = useParams();
+    console.log('The value from useParams is:', portId);
+    const pItem = useSelector(selectPortfolioByID(portId));
+    
+    // DEFINE RETURNS FOR PORTFOLIO ITEMS //
 
-const DisplayCard = () => {
-    const portfolioItem = useSelector(selectPortfolioByID(item.id));
-    const { title, image, description } = portfolioItem;
-    console.log('Item number: ', item.id);
+    const displayCaption = (portfolioCaption) => {
+        let caption = portfolioCaption;
+        if(caption){
+            return (
+                <p className='caption'>{caption}</p>
+            )
+        }
+    }
 
     return (
-        <Card>
-            <CardImg src={ image } alt={ title } />
-            <CardBody>
-                <CardTitle>
-                    { title }
-                </CardTitle>
-                <CardText>
-                    { description }
-                </CardText>
-            </CardBody>
-        </Card>
+        <>
+        <Helmet>
+            <title>Portfolio | {pItem.title}</title>
+        </Helmet>
+        <Col md="8">
+            <Card>
+                <CardHeader className='portfolio-header'>
+                    {pItem.title}
+                </CardHeader>
+                <Container>
+                    <Row>
+                        <Col>
+                            <img src={pItem.image} alt="Jay the god of small pleasures" style = {{width: '100%', marginLeft: 'auto', marginRight: 'auto', marginBottom: '12px'}}/>
+                            {() =>displayCaption(pItem.description)}
+                        </Col>
+                        <Col>
+                            <p>{pItem.content}</p>
+                        </Col>
+                    </Row>
+                </Container>
+            </Card>
+        </Col>
+        </>
     )
 }
 
-export default DisplayCard;
+export default PortfolioDisplay;

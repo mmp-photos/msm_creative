@@ -9,6 +9,8 @@ import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage';
+import ServicesPage from './pages/ServicesPage';
+import TestPage from './pages/TestPage';
 
 // PAGE CONSTRUCTION START //
 function App() {
@@ -19,7 +21,11 @@ function App() {
             <Route path="/" element = {<HomePage />} />
             <Route path="contact" element = {<ContactPage />} />
             <Route path="about" element = {<AboutPage />} />
+            <Route path="services" element = {<ServicesPage />} />
             <Route path="portfolio" element = {<PortfolioPage />} />
+            <Route path="portfolio/:portId"
+                element={<PortfolioPage />} />
+            <Route path="test" element = {<TestPage />} />
         </Routes>
       <Footer />
     </div>

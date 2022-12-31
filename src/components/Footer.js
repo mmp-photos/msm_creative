@@ -1,14 +1,15 @@
 import { Container, Row, Col } from 'reactstrap'
+import React from 'react';
 
 const Footer = () => {
     return (
         <Container fluid className={'px-0 fixed-bottom'}>
             <Row className="site-footer">
-                <Col className="col-md-8 text-left">
-                    <h1 className="title">matthew mayer</h1>
+                <Col className="d-none d-md-block col-md-8 text-left">
+                <a className='nav-link' href='/'><h1 className="title">matthew mayer</h1></a>
                 </Col>
                 <Col className="col-md-3 mr-auto align-self-center">
-                    {<footer>
+                    <footer>
                         <a href="https://www.instagram.com/mmp_photos/" alt='LinkedIN'>
                         <div className='social-buttons' id="instagram"><i className='fa fa-instagram instagram fa-3x' style={{color: '#c32aa3'}}></i></div>
                         </a>
@@ -21,7 +22,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/in/matthew-s-mayer/" alt='LinkedIN'>
                         <div className='social-buttons' id="linkedin"><i className="fa fa-linkedin fa-3x" style={{color: '#0077b5'}}></i></div>
                         </a>
-                    </footer>}
+                    </footer>
                 </Col>
             </Row>
         </Container>
