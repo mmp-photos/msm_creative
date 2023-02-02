@@ -1,8 +1,5 @@
 //import { Image, Container, Row, Col, Card, CardBody, CardImg, CardTitle, CardSubtitle, CardText } from "reactstrap";
 import React from 'react';
-import DisplayCard from "../features/portfolio/PortfolioList";
-import PortfolioDisplay from '../features/portfolio/PortfolioCard'
-import { Row, Container } from 'reactstrap';
 
 
 const ServicesPage = () => {

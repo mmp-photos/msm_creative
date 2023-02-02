@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import parse from 'html-react-parser';
 import dinoPhoto   from  '../assets/images/matt_dino.png';
 import tim_curry   from  '../assets/images/tim_curry.jpg';
+import infj        from  '../assets/images/infj.svg';
 import libra       from  '../assets/images/libra.svg';
 import HufflePuff  from  '../assets/images/hufflepuff.png';
 
@@ -64,52 +65,51 @@ const AboutPage = () => {
         <Helmet>
             <title>Aboout Me | Matthew Mayer</title>
         </Helmet>
-        <Container>
-            <Row>
-                <Col>
-                    <Row>
-                        <Col>
-                            <div>
-                                <img id="dinoPhoto" src={dinoPhoto} style={{maxWidth: '100%'}} alt='matt petting a dinosaur' />
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        &nbsp;
-                    </Row>
-                </Col>
-                <Col className={'col-md-6'} style={{marginTop: 40, paddingLeft: 95, paddingRight: 75}} >
-                    <h3>Who, What, Where?</h3>
-                    <p>My name is Matthew Mayer.  I've spent my life in publishing and communications.  From my earliest days at the <a href="https://www.idsnews.com">Indiana Daily Student</a> where I worked on the photography, advertising, and editorial staffs to my professional career converting Dummies Guides to eBooks for the earliest versions of the Kindle, I have loved every minute of my time working in communications.</p>
-                    <Row className='tldr'>
-                        <h3 style={{backgroundColor: 'black', textAlign: 'center'}}>TLDR : Quick Reference Guide</h3>
-                        <Col className='cs-bg-secondary'>
-                            <div  id='infj' onClick={onClick => TldrModalMBTI()}>
-                                <img src={libra} width='75px' className='tldr-image' alt='Libra scales'/><br />
-                            </div>
-                        </Col>
-                        <Col className='cs-bg-secondary'>
-                            <div id='libra' onClick={onClick => TldrModalZodiac()}>
-                                <img src={libra} width='75px' className='tldr-image' alt='Libra scales'/><br />
-                            </div>
-                        </Col>
-                        <Col className='cs-bg-secondary'>
-                            <div id='hufflepuff' onClick={onClick => TldrModalPuff()}>
-                                <img src={HufflePuff} width='75px' className='tldr-image' alt='Hufflepuff House Crest'/><br />
-                            </div>
-                        </Col>
-                        <Col className='cs-bg-secondary'>
-                            <div id='timCurry' onClick={onClick => TldrModalTim()}>
-                                <img src={tim_curry} width='75px' className='tldr-image' alt='Tim Curry from Clue'/><br />
-                            </div>
-                        </Col>
-                    </Row>
-
-                    <h3>Everything Old...</h3>
-                    <p>Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
-                </Col>
-            </Row>
-      </Container>
+        <div className="container">
+            <Container fluid>
+                <Row>
+                    <Col sm={12} md={6} className ="order-sm-1 order-md-2" style={{background: "#f0f1f4", overflow: "scroll"}}>
+                        <Row>
+                            <Col>
+                                <div>
+                                    <img id="interior-photo-primary" src={dinoPhoto} alt='matt petting a dinosaur' />
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <h2>TLDR <span className="d-md-none d-inline">*</span></h2>
+                                    <Col className="d-md-block d-none">
+                                    <div id='libra' className="tldr-icon d-flex align-items-center justify-content-center" onClick={onClick => TldrModalZodiac()}>
+                                        <img src={libra} className='tldr-image' alt='Libra scales'/><br />
+                                    </div>
+                                    <div  id='infj' className="tldr-icon d-flex align-items-center justify-content-center" onClick={onClick => TldrModalMBTI()}>
+                                        <img src={infj} className='tldr-image' alt='Myers Briggs Type Indicator INFJ'/><br />
+                                    </div>
+                                    <div id='hufflepuff' className="tldr-icon d-flex align-items-center justify-content-center" onClick={onClick => TldrModalPuff()}>
+                                        <img src={HufflePuff} className='tldr-image' alt='Hufflepuff House Crest'/><br />
+                                    </div>
+                                    <div id='timCurry'  className="tldr-icon d-flex align-items-center justify-content-center" onClick={onClick => TldrModalTim()}>
+                                        <img src={tim_curry} className='tldr-image' alt='Tim Curry from Clue'/><br />
+                                    </div>
+                                    </Col>
+                        </Row>
+                    </Col>
+                    <Col id="left-column-text" sm={12} md={6} className ="order-sm-2 order-md-1">
+                        <h1 className="sans">Who, What, Where?</h1>
+                            <p className="about">If those sound like the questions of a journalist that's not far off.  Newspapers, magazines and print publicaations were my first love. I spent most of my waking hours in the offices of various campus publications, most notably the Indiana Daily Student.</p>
+                        <p class="about">My name is Matthew Mayer.  I've spent my life in publishing and communications.  From my earliest days at the <a href="https://www.idsnews.com">Indiana Daily Student</a> where I worked on the photography, advertising, and editorial staffs to my professional career converting Dummies Guides to eBooks for the earliest versions of the Kindle, I have loved every minute of my time working in communications.</p>
+                        <h1 className="sans">Everything Old...</h1>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                        <p className="about">Don't let my fondness for film cameras and manual typewriters fool you.  I am up-to-date on the current technologies and excel at helping clients implement them.</p>
+                    </Col>
+                </Row>
+        </Container>
+      </div>
 
     <Modal className="about-modal" isOpen={loginModalOpen}>
     <ModalHeader className="about-modal-header" toggle={() => setLoginModalOpen(false)} >
