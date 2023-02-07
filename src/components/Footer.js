@@ -6,7 +6,7 @@ const Footer = () => {
         <Container fluid className={'px-0 fixed-bottom site-footer'}>
             <div className="container">
                 <Row>
-                    <Col className=" d-md-block col-md-8 d-flex align-items-center justify-content-center">
+                    <Col className=" d-sm-4 d-md-block col-md-8 d-flex align-items-center justify-content-center">
                     <a className='nav-link' href='/'><h1 className="title">matthew mayer</h1></a>
                     </Col>
                     <Col className="col-xs-12 col-md-3 mr-auto align-self-center">

@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import heroImage from '../assets/images/hero_image.svg';
 import mattHomepage from '../assets/images/mattHomepage.png';
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import bg01 from '../assets/images/backgrounds/bg01.jpg';
 import bg02 from '../assets/images/backgrounds/bg02.jpg';
 import bg03 from '../assets/images/backgrounds/bg03.jpg';
@@ -15,6 +15,8 @@ import bg07 from '../assets/images/backgrounds/bg07.jpg';
 import bg08 from '../assets/images/backgrounds/bg08.jpg';
 import bg09 from '../assets/images/backgrounds/bg09.jpg';
 
+const helmetContext = {};
+
 // SET UP LANDING PAGE FOR MSM CREATIVE WEBSITE //
 const HomePage = () => {
 
@@ -23,6 +25,17 @@ const HomePage = () => {
     const [ aboutStyle, setAboutStyle] = useState({});
     const [ workStyle, setWorkStyle] = useState({});
     const [ contactStyle, setContactStyle] = useState({});
+    
+    // Display welcome message
+    const [ firstRender, setFirstRender ] = useState(true);
+    //console.log("the state of firstRender is:", firstRender);
+    const welcomeMessage = "Hello!  My name is Matthew and I'm a developer.  If you are seeing this message then you are looking at the console, seeing what may appear.  I confess that I had many messages appearing during development.  Most have been commented out once the functions I was troubleshooting were working properly.  Thanks for check.  Please let me know if there are any unexpected errors showing here!"
+    if(firstRender){
+        console.log(welcomeMessage)
+        setFirstRender(false)
+    } else {
+        //console.log("the site has already been rendered")
+    };
 
     // setBackground(newImage);
     const changeBackground = useEffect(() => {
@@ -81,7 +94,7 @@ const HomePage = () => {
 
     // RETURN THE CONTENT OF THE PAGE //
     return(
-        <>
+        <HelmetProvider context={helmetContext}>
         <Helmet>
             <title>Matthew S Mayer</title>
         </Helmet>
@@ -96,7 +109,7 @@ const HomePage = () => {
                     <div>
                         <img id={mattHomepage} src={mattHomepage} className="profile-photo" alt="Matthew Mayer" />
                         <h1 className="sans" style={{paddingTop: "2rem"}}>Matthew Mayer</h1>
-                        <h3 className="sans">Coder, Marketer</h3>
+                        <h3 className="sans">Developer, Marketer</h3>
                         <h3 className="sans">Humorist &amp; Hoosier</h3>
                         <p className="plain-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                     </div>
@@ -126,7 +139,7 @@ const HomePage = () => {
                 </Col>
             </Row>
         </Container>
-        </>
+        </HelmetProvider>
     )
 }
 

@@ -1,110 +1,76 @@
 // IMPORTS //
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Card, Container, Row, Col, Button, Label, FormGroup } from 'reactstrap';
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import ContactImage from '../assets/images/contact_screen.jpg';
-import { InstagramEmbed, FacebookEmbed } from 'react-social-media-embed';
+import { Container, Row, Col } from 'reactstrap';
+import { useState } from 'react';
+import mattHomepage from '../assets/images/mattHomepage.png';
+import { InstagramEmbed } from 'react-social-media-embed';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import pdf from "../assets/images/Matthew_Mayer2023.pdf";
+
+const helmetContext = {};
 
 // CREATE CONTACT PAGE //
 const ContactPage = () => {
-    console.log("Contact Page")
+    const [ resumeStyle, setResumeStyle] = useState({});
+    const [ emailStyle, setEmailStyle]   = useState({});
 
-    const handleSubmit = () => {
-        console.log('Handle Submit');
-    }
-    const validateCommentForm = () => {
-        console.log('Validat Form')
-    }
+    const downloadResume = () => {
+        window.open(pdf, "_blank");
+    };
 
+    const sendMail = function sendEmail() {
+        window.location = "mailto:matt@msm.codes";
+    };
     return (
         <>
+        <HelmetProvider context={helmetContext}>
             <Helmet>
                 <title>Contact Me | Matthew Mayer</title>
             </Helmet>
-            <Container>
-                <Row style={{ marginBottom: 165 }}>
-                    <Col md='8'>
-                        <Card>
-                            <img src={ContactImage} alt='Envelopes with wax seals' />
-                            <div className = 'justify-content-center' style = {{ width: '65%'}}>
-                                <Formik
-                                initialValues={{
-                                    rating: undefined,
-                                    author: '',
-                                    text: ''
-                                }}
-                                onSubmit = {handleSubmit}
-                                validate={validateCommentForm}
-                                >
-                                    <Form style = {{ padding: 26 }}>
-                                        <FormGroup>
-                                            <Label htmlFor='rating'>Your Name</Label>
-                                            <Field
-                                            name='name'
-                                            placeholder='Your Name'
-                                            className='form-control'
-                                            />
-                                            <ErrorMessage name='name'>
-                                            {(msg) => <p className='text-danger'>{msg}</p>}
-                                            </ErrorMessage>
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <Label htmlFor='rating'>Your Email</Label>
-                                            <Field
-                                            name='email'
-                                            placeholder='Email Address'
-                                            className='form-control'
-                                            />
-                                            <ErrorMessage name='email'>
-                                            {(msg) => <p className='text-danger'>{msg}</p>}
-                                            </ErrorMessage>
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <Label htmlFor='rating'>Rating</Label>
-                                            <Field
-                                                name='rating'
-                                                as='select'
-                                                className='form-control'>
-                                                    <option>Select...</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                            </Field>
-                                            <ErrorMessage name='rating'>
-                                            {(msg) => <p className='text-danger'>{msg}</p>}
-                                            </ErrorMessage>
-                                        </FormGroup>
-                                        <FormGroup>
-                                            <Label htmlFor='messageText'>Message</Label>
-                                            <Field
-                                                name='messageText'
-                                                as='textarea'
-                                                rows='12'
-                                                className='form-control'
-                                                />
-                                        </FormGroup>
-                                        <Button type='reset' color='danger'>Reset</Button>
-                                        &nbsp;
-                                        <Button type='submit' color='primary'>Submit</Button>
-                                    </Form>
-
-                                </Formik>
-                            </div>
-                        </Card>
+            <Container className="inner-container">
+                <Row>
+                    <Col style={{textAlign: "center"}}>
+                        <div style={{backgroundColor: "#6d99f9", padding: 32, borderRadius: "30 degrees"}}>
+                            <img id={mattHomepage} src={mattHomepage} className="contact-photo" alt="Matthew Mayer" />
+                            <div className="label">Name:</div>
+                            <div className="information">Matthew Mayer</div>
+                            <div className="label">Pronouns:</div>
+                            <div className="information">He/Him</div>
+                            <div className="label">Email:</div>
+                            <div className="information">matt@msm.codes</div>
+                            <div className="label">Phone:</div>
+                            <div className="information">(503) 360-8986</div>
+                            <div className="label">Preferred communication:</div>
+                            <div className="information">Text or Email</div>
+                        </div>
                     </Col>
-                    <Col>
-                        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}>
-                            <InstagramEmbed url="https://www.instagram.com/mmp_photos/" width={328}/>
+                    <Col sm={12} md={4}>
+                            <button id="resume"
+                                onMouseEnter={() => setResumeStyle({backgroundColor: "#43598a", color: "white"})}
+                                onMouseLeave={() => setResumeStyle({fontStyle: "normal"})}
+                                onClick={() => downloadResume()}
+                                style={resumeStyle}
+                            >
+                                <i className="fa fa-file-pdf"></i>
+                                <p className="contact-text">Resume</p>
+                            </button>
+                        <div id="email"
+                            onMouseEnter={() => setEmailStyle({backgroundColor: "#43598a", color: "white"})}
+                            onMouseLeave={() => setEmailStyle({fontStyle: "normal"})}
+                            onClick={() => sendMail()}
+                            style={emailStyle}
+                        
+                        >
+                            <i className="fa-regular fa-envelope"></i>
+                            <p className="contact-text">matt@msm.codes</p>
                         </div>
-                        <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#fff', width:328, marginLeft: 44, paddingTop: 16, paddingBottom: 9}}>
-                            <FacebookEmbed url="https://www.facebook.com/photo?fbid=10229443675664791&set=a.1512373377763" width={288} />
-                        </div>
+                    </Col>
+                    <Col className="d-none d-lg-block">
+                        <InstagramEmbed url="https://www.instagram.com/mmp_photos/" width={328}/>
                     </Col>
                 </Row>
             </Container>
+        </HelmetProvider>
         </>
     )
 }

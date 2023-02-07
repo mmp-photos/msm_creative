@@ -10,22 +10,20 @@
     --light-blue: #6d99f9;
     --dark-blue: #43598a;
 
-  /* SET DEFAULTS FOR THE SITE */
-  background-color: var(--background-color);
-  font-size: 16px;
-  
  /****** DESKTOP SITE VARIABLES ******/
     /* ALIGNMENT VARIABLES */
     --align-right-to-center: 0 0 0 auto;
+    --mobile-inline-block: block;
 
     /* SIZING VARIABLES */
     --profilePhoto: 200px;
+    --contactPhoto: 200px;
     --interior-photo-scale: 85%;
     
     /* SPACING VARIABLES */
     --left-column-padding: 16rem;
     --photo-margin: 4rem;
-    --interior-photo-padding: 10rem 0rem;
+    --interior-photo-padding: 10rem 0rem 3.25rem 0rem;
     --mobile-only-clear: none;
     --mobile-only-padding-top: 0rem;
 
@@ -33,14 +31,16 @@
     --h1-font-size: 4rem;
     --h2-sans: 2em;
 
+    /* HEADER VARIABLES */
+    --nav-text-top: 1.75rem;
+    --nav-display: block;
+    --nav-margin-top: 20em;
+
     /* FOOTER VARIABLES */
     --footer-text: 8rem;
     
     /* HOMEPAGE SPECIFIC VARIABLES */
     --nav-text: 8rem;
-    --nav-display: block;
-    --nav-margin-top: 20em;
-    --nav-gradient: none;
 
     /* INTERIOR PAGE VARIABLES */
     --interior-head: 6rem;
@@ -54,6 +54,7 @@
   :root {
   /* ALIGNMENT VARIABLES */
   --align-right-to-center: 15px -15px 26px auto;
+  --mobile-inline-block: inline-block;
 
   /* SPACING VARIABLES */
   --left-column-padding: 3.5rem;
@@ -63,21 +64,23 @@
 
   /* SIZING VARIABLES */
   --profilePhoto: 120px;
+  --contactPhoto: 200px;
   --interior-photo-scale: 35%;
 
   /* TEXT AND HEADER SIZES */
   --h1-font-size: 3rem;
   --h2-sans: 1.5em;
 
+  /* HEADER VARIABLES */
+  --nav-text-top: 1rem;
+  --nav-display: block;
+  --nav-margin-top: 20em;
+
   /* FOOTER VARIABLES */
-  --footer-text: 18rem;
+  --footer-text: 2rem;
 
   /* HOMEPAGE SPECIFIC VARIABLES */
   --nav-text: 5rem;
-  --nav-display: block;
-  --footer-text: 2rem;
-  --nav-margin-top: 20em;
-  --nav-gradient: linear-gradient(50deg, transparent, var(--light-blue));
 
   /* INTERIOR PAGE VARIABLES */
   --interior-head: 4rem;
@@ -87,19 +90,25 @@
   }
 }
 
-/* NAVIGATION STYLES */
-/*/////////////////////////////////////////////////////////////////////*/
-
-  body {
-      background-color: var(--main-bg-color);
-      color: #1a1a1b;
-      font-family: 'Palatino','Times New Roman', Times, serif;
-    }
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1400px;
-  }
+body {
+  background-color: var(--background-color);
+  font-family: var(--serif-fonts);
+}
+.outer-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inner-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 150px;
+  padding-bottom: 175px;
+}
+.negative-ten-degrees {
+  transform: rotate(-10deg);
+}
 /*****END GLOBAL STYLES*****/
 
 
@@ -116,7 +125,7 @@
   .top-nav-text{
     font-family: var(--sans-fonts);
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: var(--nav-text-top);
   }
   .plain-paragraph{
     clear: var(--mobile-only-clear);
@@ -149,8 +158,17 @@
     padding-left: 5rem;
     padding-right: 1.5rem;
   }
-  
-  #home-contact {
+  #home-about:hover {
+    font-size: var(--nav-text);
+    font-family: var(--serif-fonts);
+    font-style: italic;
+    display: var(--nav-display);
+    margin: var(--align-right-to-center);
+    background-image: var(--nav-gradient);
+    padding-left: 5rem;
+    padding-right: 1.5rem;
+
+  }  #home-contact {
     font-size: var(--nav-text);
     font-family: var(--serif-fonts);
     display: var(--nav-display);
@@ -195,6 +213,9 @@
     font-size: 1.5rem;
     padding: var(--left-column-padding)
   }
+  #right-column {
+    position: sticky;
+  }
   #interior-photo-primary {
     max-width: var(--interior-photo-scale);
     padding: var(--interior-photo-padding);
@@ -214,10 +235,72 @@
     max-height: 65px;
     max-width: 65px;
     display: inline;
+    fill: white;
   }
   /*****END INTERIOR PAGE STYLES*****/
 
-/* WORK PAGE ID TAGS */
+/* CONTACT PAGE ID TAGS */
+ /*/////////////////////////////////////////////////////////////////////*/
+  img.contact-photo {
+    width: var(--contactPhoto);
+    border-radius: 50%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--yellow-highlight);
+  } 
+ #resume{
+    display: var(--mobile-inline-block);
+    color: var(--light-blue);
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--light-blue);
+    border-radius: 30px;
+    text-align: center;
+    padding-top: auto;
+    justify-content: center;
+    padding-top: 22px;
+    font-size: 6rem;
+  }
+  #email{
+    display: var(--mobile-inline-block);
+    color: var(--light-blue);
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--light-blue);
+    border-radius: 30px;
+    text-align: center;
+    padding-top: auto;
+    justify-content: center;
+    padding-top: 22px;
+    font-size: 6rem;
+  }
+  p.contact-text {
+    font-size: 1.5rem;
+    font-family: var(--sans-fonts);
+  }
+  div.label {
+    display: inline-block;
+    font-family: var(--sans-fonts);
+    font-size: 1.5rem;
+    width: 50%;
+    text-align: right;
+    padding: 4px;
+  }
+  div.information {
+    display: inline-block;
+    font-family: var(--serif-fonts);
+    font-size: 1.5rem;
+    width: 50%;
+    text-align: left;
+    padding: 4px;
+  }
+  /*****END CONTACT PAGE STYLES****/
+
+ /* WORK PAGE ID TAGS */
  /*/////////////////////////////////////////////////////////////////////*/
 #work-developer {
   font-weight: bold;

@@ -11,7 +11,7 @@
       }
 
       .cls-3 {
-        fill: #231f20;
+        fill: #faf4b6;
         font-family: SourceSerifRoman-Regular, 'Source Serif Variable';
         font-size: 58px;
         font-variation-settings: 'wght' 400;
