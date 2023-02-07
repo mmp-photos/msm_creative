@@ -60,16 +60,16 @@ const Header = (props) => {
                                             <Container>
                                                 <Nav className="justify-content-end" style={{paddingRight: 132}} navbar>
                                                     <NavItem>
-                                                        <NavLink href="/"><span className="top-nav-text">Home</span></NavLink>
+                                                        <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="/about"><span className="top-nav-text">About</span></NavLink>
+                                                        <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="/work"><span className="top-nav-text">Work</span></NavLink>
+                                                        <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="/contact"><span className="top-nav-text">Contact</span></NavLink>
+                                                        <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
                                                     </NavItem>
                                                 </Nav>
                                             </Container>
