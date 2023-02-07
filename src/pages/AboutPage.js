@@ -68,7 +68,7 @@ const AboutPage = () => {
             <title>Aboout Me | Matthew Mayer</title>
         </Helmet>
         <div className="container">
-            <Container fluid>
+            <Container className="inner-container">
                 <Row>
                     <Col id="right-column" sm={12} md={6} className ="order-sm-1 order-md-2">
                         <Row>

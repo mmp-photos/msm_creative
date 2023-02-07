@@ -1,5 +1,6 @@
 // IMPORTS //
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from 'reactstrap';
 import heroImage from '../assets/images/hero_image.svg';
 import mattHomepage from '../assets/images/mattHomepage.png';
@@ -98,9 +99,9 @@ const HomePage = () => {
         <Helmet>
             <title>Matthew S Mayer</title>
         </Helmet>
-        <Container fluid style={{marginTop: 55}}>
+        <Container className="inner-container">
             <Row>
-                <Col sm={12} md={6} className ="order-sm-1 order-md-2">
+                <Col sm={12} md={5} className ="order-sm-1 order-md-2">
                     <div id={'home-media'} style={{height: calcMaxHeight + 'px; overflow: hidden', backgroundImage:`url(${bgPattern})`}} onClick = {() => setStop(stopStatus)}>
                         <div style={{height: calcMaxHeight + 'px; overflow: hidden'}}>
                             <img id="msmImage" src={heroImage} style={{maxWidth: '100%', cursor: "pointer"}} alt='hero artwork' />
@@ -114,27 +115,24 @@ const HomePage = () => {
                         <p className="plain-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                     </div>
                 </Col>        
-                <Col sm={12} md={3} className ="order-sm-2 order-md-1 offset-md-2">
+                <Col sm={12} md={5} className ="order-sm-2 order-md-1">
                     <button id="home-work" 
                         onMouseEnter={() => updateStyle("work")}
                         onMouseLeave={() => setWorkStyle({fontStyle: "normal"})}
-                        onClick={() => homeLinks('work')}
                         style={workStyle}>
-                        Work.
+                        <Link to="/work">Work.</Link>
                     </button>
                     <button id="home-about"
                         onMouseEnter={() => updateStyle("about")}
                         onMouseLeave={() => setAboutStyle({fontStyle: "normal"})}
-                        onClick={() => homeLinks('about')}
                         style={aboutStyle}>
-                        About.
+                        <Link to="/about">About.</Link>
                     </button>
                     <button type="button" id="home-contact"
                         onMouseEnter={() => updateStyle("contact")}
                         onMouseLeave={() => setContactStyle({fontStyle: "normal"})}
-                        onClick={() => homeLinks('contact')}
                         style={contactStyle}>
-                        Contact.
+                        <Link to="/contact">Contact.</Link>
                     </button>
                 </Col>
             </Row>

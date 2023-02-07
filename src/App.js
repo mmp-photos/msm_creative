@@ -22,12 +22,12 @@ function App() {
       <Header></Header>
         <Routes>
             <Route path="/" element = {<HomePage />} />
-            <Route path="contact" element = {<ContactPage />} />
-            <Route path="about" element = {<AboutPage />} />
-            <Route path="work" element = {<WorkPage />} />
-            <Route path="portfolio/:portId"
+            <Route path="/contact" element = {<ContactPage />} />
+            <Route path="/about" element = {<AboutPage />} />
+            <Route path="/work" element = {<WorkPage />} />
+            <Route path="/portfolio/:portId"
                 element={<PortfolioPage />} />
-            <Route path="test" element = {<TestPage />} />
+            <Route path="/test" element = {<TestPage />} />
         </Routes>
       <Footer />
     </HelmetProvider>
