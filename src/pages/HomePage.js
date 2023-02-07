@@ -67,7 +67,6 @@ const HomePage = () => {
     stopSwitch(stopStatus);
     // console.log('Stopped status from line 31 after the stopSwitch function is: ', isStopped); –- Commented out after issue was resolved. //
     
-
     //SET HEIGHT OF MSM LOGO // 
     var clientWidth = window.innerWidth;
     clientWidth /= 2.14;
@@ -89,9 +88,6 @@ const HomePage = () => {
                 console.log(`updateStyle value is default`);
         }
     };
-    const homeLinks = (url) => {
-        window.open(url, '_self');
-    }
 
     // RETURN THE CONTENT OF THE PAGE //
     return(

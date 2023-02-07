@@ -1,14 +1,13 @@
 // IMPORTS //
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {
     Navbar,
     Container,
     Row,
     Col,
-    NavbarToggler,
     Nav,
     NavItem,
-    NavLink,
 } from 'reactstrap';
 import { useLocation } from 'react-router-dom';
 
@@ -56,23 +55,20 @@ const Header = (props) => {
                                 </Col>
                                 <Col id="top-nav">
                                     <Navbar expand="xs" className="ml-auto">
-                                        <NavbarToggler/>
-                                            <Container>
-                                                <Nav className="justify-content-end" style={{paddingRight: 132}} navbar>
-                                                    <NavItem>
-                                                        <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
-                                                    </NavItem>
-                                                    <NavItem>
-                                                        <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
-                                                    </NavItem>
-                                                    <NavItem>
-                                                        <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
-                                                    </NavItem>
-                                                    <NavItem>
-                                                        <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
-                                                    </NavItem>
-                                                </Nav>
-                                            </Container>
+                                        <Nav className="justify-content-end" style={{paddingRight: 132}} navbar>
+                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavLink to="/"><span className="top-nav-text">Home</span></NavLink>
+                                            </NavItem>
+                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavLink to="/about"><span className="top-nav-text">About</span></NavLink>
+                                            </NavItem>
+                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavLink to="/work"><span className="top-nav-text">Work</span></NavLink>
+                                            </NavItem>
+                                            <NavItem style={{paddingLeft: 12, paddingRight: 12}}>
+                                                <NavLink to="/contact"><span className="top-nav-text">Contact</span></NavLink>
+                                            </NavItem>
+                                        </Nav>
                                     </Navbar>
                                 </Col>
                             </Row>
