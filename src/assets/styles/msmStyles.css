@@ -30,6 +30,7 @@
     /* TEXT AND HEADER SIZES */
     --h1-font-size: 4rem;
     --h2-sans: 2em;
+    --header-title-text: 8rem;
 
     /* HEADER VARIABLES */
     --nav-text-top: 1.75rem;
@@ -38,6 +39,8 @@
 
     /* FOOTER VARIABLES */
     --footer-text: 8rem;
+    --footer-icons: 4.5rem;
+    --footer-padding-top: none;
     
     /* HOMEPAGE SPECIFIC VARIABLES */
     --nav-text: 8rem;
@@ -70,6 +73,7 @@
   /* TEXT AND HEADER SIZES */
   --h1-font-size: 3rem;
   --h2-sans: 1.5em;
+  --header-title-text: 8rem;
 
   /* HEADER VARIABLES */
   --nav-text-top: 1rem;
@@ -77,13 +81,15 @@
   --nav-margin-top: 20em;
 
   /* FOOTER VARIABLES */
-  --footer-text: 2rem;
+  --footer-text: 2.5rem;
+  --footer-icons: 2.5rem;
+  --footer-padding-top: 12px;
 
   /* HOMEPAGE SPECIFIC VARIABLES */
   --nav-text: 5rem;
 
   /* INTERIOR PAGE VARIABLES */
-  --interior-head: 4rem;
+  --interior-head: 3.5rem;
 
   /* WORK PAGE VARIABLES */
   --work-buttons: 2.5rem;
@@ -122,6 +128,13 @@ body {
   .interior-top{
     background-image: linear-gradient(180deg, var(--background-color) 70%, transparent);
   }
+
+  h1.page-title{
+    font-size: var(--interior-head);
+    font-style: italic;
+    background-image: linear-gradient(135deg, rgba(238,238,238,1) 0%,rgba(238,238,238,0.25) 100%);
+    padding-bottom: .4em;
+  }
   .top-nav-text{
     font-family: var(--sans-fonts);
     text-transform: uppercase;
@@ -143,7 +156,12 @@ body {
   min-height: 6rem;
   border-top: 5px solid var(--light-blue);
 }
-
+.social-buttons {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: var(--footer-icons);
+  padding-top: var(--footer-padding-top);
+}
 /*****END FOOTER STYLES****/
 
 
@@ -339,12 +357,6 @@ body {
     font-weight: normal;
     font-size: 3rem;
   }
-  h1.page-title{
-    font-size: var(--interior-head);
-    font-style: italic;
-    background-image: linear-gradient(135deg, rgba(238,238,238,1) 0%,rgba(238,238,238,0.25) 100%);
-    padding-bottom: .4em;
-  }
   h1.sans {
     font-family: var(--sans-fonts);
     font-weight: 400;
@@ -419,11 +431,6 @@ body {
   btn-sk {
     min-width: 550px;
     background-color: aqua;
-  }
-
-  .social-buttons {
-    display: inline-block;
-    margin-left: 20px;
   }
 
 /* MODAL STYLES */
