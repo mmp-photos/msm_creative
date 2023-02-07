@@ -49,27 +49,27 @@ const Header = (props) => {
             }
             else {
                 return(
-                    <Container style={{position: "fixed", zIndex: 2}} className="interior-top">
+                    <Container className="outer-container" style={{position: "fixed", left: "50%", transform: "translateX(-50%)"}}>
                             <Row>
                                 <Col>
                                     <h1 className="page-title" style={{display: "block", marginTop: 15, marginLeft: 35}}>{pageTitle}</h1>
                                 </Col>
                                 <Col id="top-nav">
-                                    <Navbar expand="xs">
+                                    <Navbar expand="xs" className="ml-auto">
                                         <NavbarToggler/>
                                             <Container>
-                                                <Nav className="mr-auto" navbar>
+                                                <Nav className="justify-content-end" style={{paddingRight: 132}} navbar>
                                                     <NavItem>
                                                         <NavLink href="/"><span className="top-nav-text">Home</span></NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="about"><span className="top-nav-text">About</span></NavLink>
+                                                        <NavLink href="/about"><span className="top-nav-text">About</span></NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="work"><span className="top-nav-text">Work</span></NavLink>
+                                                        <NavLink href="/work"><span className="top-nav-text">Work</span></NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="contact"><span className="top-nav-text">Contact</span></NavLink>
+                                                        <NavLink href="/contact"><span className="top-nav-text">Contact</span></NavLink>
                                                     </NavItem>
                                                 </Nav>
                                             </Container>

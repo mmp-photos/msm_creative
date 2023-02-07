@@ -67,7 +67,6 @@ const AboutPage = () => {
         <Helmet>
             <title>Aboout Me | Matthew Mayer</title>
         </Helmet>
-        <div className="container">
             <Container className="inner-container">
                 <Row>
                     <Col id="right-column" sm={12} md={6} className ="order-sm-1 order-md-2">
@@ -111,7 +110,6 @@ const AboutPage = () => {
                     </Col>
                 </Row>
         </Container>
-      </div>
 
     <Modal className="about-modal" isOpen={loginModalOpen}>
     <ModalHeader className="about-modal-header" toggle={() => setLoginModalOpen(false)} >

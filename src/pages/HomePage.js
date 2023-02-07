@@ -71,7 +71,7 @@ const HomePage = () => {
     //SET HEIGHT OF MSM LOGO // 
     var clientWidth = window.innerWidth;
     clientWidth /= 2.14;
-    const calcMaxHeight = Math.ceil(clientWidth);
+    const calcMaxHeight = Math.ceil(clientWidth) - 12;
 
     //SET UP LINKS AND STYLE CHANGES OF PRIMARY BUTTONS //
     const updateStyle = (style) => {
@@ -104,15 +104,17 @@ const HomePage = () => {
                 <Col sm={12} md={5} className ="order-sm-1 order-md-2">
                     <div id={'home-media'} style={{height: calcMaxHeight + 'px; overflow: hidden', backgroundImage:`url(${bgPattern})`}} onClick = {() => setStop(stopStatus)}>
                         <div style={{height: calcMaxHeight + 'px; overflow: hidden'}}>
-                            <img id="msmImage" src={heroImage} style={{maxWidth: '100%', cursor: "pointer"}} alt='hero artwork' />
+                            <img id="msmImage" src={heroImage} style={{width: '105%', cursor: "pointer", marginTop: "-12px"}} alt='hero artwork' />
                         </div>
                     </div>
                     <div>
                         <img id={mattHomepage} src={mattHomepage} className="profile-photo" alt="Matthew Mayer" />
-                        <h1 className="sans" style={{paddingTop: "2rem"}}>Matthew Mayer</h1>
-                        <h3 className="sans">Developer, Marketer</h3>
-                        <h3 className="sans">Humorist &amp; Hoosier</h3>
-                        <p className="plain-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        <div className="blurb-text">
+                            <h1 className="sans">Matthew Mayer</h1>
+                            <h3 className="sans">Developer, Marketer</h3>
+                            <h3 className="sans">Humorist &amp; Hoosier</h3>
+                            <p className="plain-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        </div>
                     </div>
                 </Col>        
                 <Col sm={12} md={5} className ="order-sm-2 order-md-1">
